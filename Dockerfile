@@ -16,6 +16,8 @@ RUN pip install -r requirements.txt
 COPY . /code/
 
 # Run migrations
+RUN python manage.py makemigrations
+RUN python manage.py migrate tasks
 RUN python manage.py migrate
 
 # Expose port
